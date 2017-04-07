@@ -20,6 +20,7 @@ int random(int a, int b) {
 void init() {
 	score = 0;
 	emptyBlockVec.clear();
+
 	for (int i = 0; i < BLOCK_COUNT; i++) {
 		mat[i / ROW][i % ROW] = 0;
 		emptyBlockVec.push_back(i);

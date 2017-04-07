@@ -188,6 +188,7 @@ void updateVec() {
 
 void play(char slt) {
 	moveBlock = false;
+
 	switch (slt)
 	{
 	case 'w':
@@ -209,6 +210,7 @@ void play(char slt) {
 	default:
 		break;
 	}
+
 	updateVec();
 	if (moveBlock) {
 		int blockIndex = random(0, emptyBlockVec.size());
