@@ -5,6 +5,7 @@
 
 using namespace std;
 
+extern int score;
 extern int mat[ROW][COLUMN];
 extern vector<int> emptyBlockVec;
 
@@ -36,4 +37,9 @@ void draw() {
 		cout << endl;
 		draw_line();
 	}
+	cout << endl << endl;
+	for (int i = 0; i < ROW / 2; i++) {
+		cout << "  ";
+	}
+	cout << "score: " << score << endl;
 }

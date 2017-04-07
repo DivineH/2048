@@ -3,6 +3,7 @@
 
 using namespace std;
 
+extern int score;
 extern int mat[ROW][COLUMN];
 extern vector<int> emptyBlockVec;
 
@@ -27,6 +28,7 @@ void moveUp() {
 					else if (mat[y][x] == mat[i][x]) {
 						mat[y][x] += mat[i][x];
 						mat[i][x] = 0;
+						score += mat[y][x];
 						break;
 					}
 					else {
@@ -67,6 +69,7 @@ void moveDown() {
 					else if (mat[y][x] == mat[i][x]) {
 						mat[y][x] += mat[i][x];
 						mat[i][x] = 0;
+						score += mat[y][x];
 						break;
 					}
 					else {
@@ -108,6 +111,7 @@ void moveLeft() {
 						if (mat[y][x] == mat[y][i]) {
 							mat[y][x] += mat[y][i];
 							mat[y][i] = 0;
+							score += mat[y][x];
 							break;
 						}
 						else {
@@ -149,6 +153,7 @@ void moveRight() {
 					else if (mat[y][x] == mat[y][i]) {
 						mat[y][x] += mat[y][i];
 						mat[y][i] = 0;
+						score += mat[y][x];
 						break;
 					}
 					else {
@@ -206,7 +211,8 @@ void play(char slt) {
 	}
 	updateVec();
 	if (moveBlock) {
-		int blockId = random(0, emptyBlockVec.size());
+		int blockIndex = random(0, emptyBlockVec.size());
+		int blockId = emptyBlockVec[blockIndex];
 		mat[blockId / ROW][blockId % ROW] = 2;
 	}
 	draw();
